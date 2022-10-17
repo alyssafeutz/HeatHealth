@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>WeatherApp</title>
+</head>
+
+<body>
+    <nav>
+        <div class="title">
+            <h1>WeatherApp</h1>
+        </div>
+        <ul class="links">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="learn.html">Learn</a>
+            </li>
+            <li>
+                <a href="help.html">Help</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="main">
+        <h3>Note: the information on this website is not intended as medical advice and is not intended to replace CalOSHA guidelines.</h3>
+        <h2>To unsubscribe from our future newsletter, enter your email address here:</h2>
+        <input type="email" placeholder="Email Address">
+        <button class="button open-button">Unsubscribe</button>
+        <dialog class="modal" id="modal">
+            <h3>Are you sure you want to unsubscribe? Click yes to unsubscribe</h3>
+            <button class="button close-button">Yes</button>
+            <button class="button no-button">No</button>
+        </dialog>
+        <div class="space"></div>
+        <h2>If you would like more information about ways to keep you and your employees safe while working outdoors,
+            please check out these links:</h2>
+        <ul>
+            <li>
+                <a href="https://www.dir.ca.gov/DOSH/HeatIllnessInfo.html"
+                    onclick="alert('You are navigating away from the HeatHealth website. Go back to return.');">CalOSHA
+                    Heat Illness Prevention</a>
+            </li>
+            <li>
+                <a href="http://www.99calor.org/english.html"
+                    onclick="alert('You are navigating away from the HeatHealth website. Go back to return.');">99
+                    Calor: Heat Illness Prevention (English)</a>
+            </li>
+            <li>
+                <a href="http://www.99calor.org/espanol/"
+                    onclick="alert('You are navigating away from the HeatHealth website. Go back to return.');">99
+                    Calor: La Prevención de Enfermedades del Calor (Espanol)</a>
+            </li>
+
+        </ul>
+
+        <script>
+            const modal = document.querySelector('#modal');
+            const openModal = document.querySelector('.open-button');
+            const yesModal = document.querySelector('.close-button');
+            const noModal = document.querySelector('.no-button');
+            openModal.addEventListener('click', () => {
+                modal.showModal();
+            })
+            yesModal.addEventListener('click', () => {
+                modal.close()
+            })
+            noModal.addEventListener('click', () => {
+                modal.close()
+            })
+            function unsubscribeConfirm() {
+                alert("We're sorry to see you go, your email " + " will not receive future emails.")
+            }
+            yesModal.addEventListener('click', unsubscribeConfirm);
+        </script>
+
+
+
+    </div>
+</body>
+
+</html>

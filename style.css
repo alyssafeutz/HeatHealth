@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background-color: rgb(132, 160, 252);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.space{
+    margin:250px
+}
+.space1{
+    margin:500px
+}
+
+#tempAbove94, #tempAbove79, #allTemperatures{
+    font-size: large;
+}
+.title{
+    color:rgb(43, 45, 51)
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:40%;
+}
+
+.main{
+    /* display:flex; */
+    justify-content: space-around;
+    align-items: center;
+}
