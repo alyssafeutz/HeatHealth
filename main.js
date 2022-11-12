@@ -6,11 +6,25 @@ const textOutput = document.getElementById("textOutput");
 const emailInput = document.getElementById("emailInput");
 const emailButton = document.getElementById("emailButton");
 
-//Future API
+//Weather API
 if (textInput) {var temperatureInF = 97}
+class Fetch {
+    async getCurrent(){
+        const myKey = "f1f6c035a39b6452697f42e012796d61";
+        const city = textInput.value
+         
+        const response = await fetch(
+            `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKey}`
+        );
+        const data = await response.json();
+        const maxTemp = data.main.temp_max
+        console.log(maxTemp)
+    }
+}
 var advice = ""
 const char = "@"
-
+const apiCall = new Fetch();
+const tempCall = document.getElementById("z")
 
 if (temperatureInF > 94) {
     // anchor tag elements
@@ -46,8 +60,13 @@ if (temperatureInF > 94) {
 }
 
 function textFunction() {
-    textOutput.innerHTML = "The weather for " + textInput.value + " is going to have a high of " + temperatureInF +
-        " this means that " + advice + " Click here to learn more: ";
+    const MEE = new Fetch()
+    var ourTemp = ""
+    MEE.getCurrent((maxTemp) => {
+        ourTemp = maxTemp
+        console.log(maxTemp)})
+    
+    textOutput.innerHTML = "Upload the 'convertedtemp.txt' file to display high temperature in Fahrenheit for " + textInput.value;
         document.body.appendChild(a)
     // <button id="more">Click here</button>
 }
